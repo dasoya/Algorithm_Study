@@ -46,12 +46,6 @@ cmake_ninja_workdir = /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/cm
 
 build cmake_object_order_depends_target_untitled: phony || CMakeFiles/untitled.dir
 
-build CMakeFiles/untitled.dir/B10871.cpp.o: CXX_COMPILER__untitled_Debug /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/B10871.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/B10871.cpp.o.d
-  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
-
 build CMakeFiles/untitled.dir/2480.cpp.o: CXX_COMPILER__untitled_Debug /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/2480.cpp || cmake_object_order_depends_target_untitled
   DEP_FILE = CMakeFiles/untitled.dir/2480.cpp.o.d
   FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
@@ -66,7 +60,7 @@ build CMakeFiles/untitled.dir/2480.cpp.o: CXX_COMPILER__untitled_Debug /Users/da
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/B10871.cpp.o CMakeFiles/untitled.dir/2480.cpp.o
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/2480.cpp.o
   FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :
