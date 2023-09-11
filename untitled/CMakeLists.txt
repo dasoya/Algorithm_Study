@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(untitled
         #main.cpp
-        B10871.cpp)
+        #B10871.cpp
+        2480.cpp)
