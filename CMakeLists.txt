@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Algorithm_Study
         #basic-algo-lecture/0x03/array_test.cpp
-        "untitled/0X03 배열/10808.cpp")
+        #"untitled/0X03 배열/10808.cpp"
+        #"untitled/0X03 배열/2577.cpp"
+        #"untitled/0X03 배열/1475.cpp"
+        "untitled/0X03 배열/3273.cpp")
