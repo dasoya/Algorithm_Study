@@ -33,7 +33,7 @@ int main(){
             case 'B' :
                // cout << *t <<" ";
 
-                if(t!=editor.begin()) t = editor.erase(--t);
+                if(t!=editor.begin()) t = editor.erase(--t); //erase 후 t를 반환 받아야함.
                 break;
             case 'P' :
                 char temp;
