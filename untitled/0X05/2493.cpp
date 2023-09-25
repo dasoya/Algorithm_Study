@@ -6,37 +6,32 @@
 
 using namespace std;
 
+#define X first
+#define Y second
+
 int main(){
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
     int n ;
     cin >> n;
 
-    vector<int> v, result;
-    v.assign(n,0);
+    stack<pair<int,int>> tower;
 
-
-    for (int i = 0; i < n; ++i) {
-        cin >> v[i];
-    }
+    tower.push({100000001,0});
 
     for (int i = 0; i < n; ++i) {
-        stack<int> st;
-        for (int j = 0; j < i; ++j) {
-            st.push(v[j]);
-        }
-        int k = 0;
-        while(1){
-            if(st.top() >= v[i]){
 
-                cout << i-k<<" ";
-                break;
-            }
-            k++;
-            st.pop();
+        int height;
+        cin >> height;
 
-            if(st.empty())
-                cout << 0 <<" ";
+        while(tower.top().X < height){
+            tower.pop();
         }
+        cout << tower.top().second << " ";
+        tower.push({height,i+1});
+
     }
     
 
