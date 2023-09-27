@@ -15,4 +15,5 @@ add_executable(Algorithm_Study
         #untitled/0X04/1158.cpp
         #untitled/0X05/1874.cpp
         #untitled/0X05/2493.cpp
-        untitled/0X06/18258.cpp)
+        #untitled/0X06/18258.cpp
+        untitled/0X06/2164.cpp)
