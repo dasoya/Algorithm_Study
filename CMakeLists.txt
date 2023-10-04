@@ -19,4 +19,6 @@ add_executable(Algorithm_Study
         #untitled/0X06/2164.cpp
         #basic-algo-lecture/0x07/deque_test.cpp
         #untitled/0X07/1021.cpp
-        untitled/0X07/5430.cpp)
+        #untitled/0X07/5430.cpp
+        #untitled/0X08/10799.cpp
+        untitled/0X08/2504.cpp)
