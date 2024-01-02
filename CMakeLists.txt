@@ -26,4 +26,5 @@ add_executable(Algorithm_Study
         #untitled/0X09/1926.cpp
         #untitled/0X09/hw1.c
         #untitled/0X09/hw2.c
-        "untitled/0X10 BFS/4179.cpp")
+        #"untitled/0X10 BFS/4179.cpp"
+        "untitled/0X10 BFS/1697.cpp")
