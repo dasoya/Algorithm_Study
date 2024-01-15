@@ -30,13 +30,13 @@ int main(void){
         for (int i = 0; i < l; ++i) {
             for (int j = 0; j < r; ++j) {
                 for (int k = 0; k < c; ++k) {
-                    cin >> board[j][k][i];
-                    dist[j][k][i]=-1;
+                    cin >> board[k][j][i];
+                    dist[k][j][i]=-1;
 
 
-                    if(board[j][k][i]=='S'){
-                        Q.push({j,k,i});
-                        dist[j][k][i]=0;
+                    if(board[k][j][i]=='S'){
+                        Q.push({k,j,i});
+                        dist[k][j][i]=0;
                     }
                 }
             }
@@ -58,7 +58,7 @@ int main(void){
                 int ny = y+dy[i];
                 int nz = z+dz[i];
 
-                if(nx<0||nx>=r||ny<0||ny>=c||nz<0||nz>=l) continue;
+                if(nx<0||nx>=c||ny<0||ny>=r||nz<0||nz>=l) continue;
                 if(board[nx][ny][nz] =='#'|| dist[nx][ny][nz] > -1) continue;
 
                // cout << nx <<" "<<ny<<" "<<nz<<" \n";
