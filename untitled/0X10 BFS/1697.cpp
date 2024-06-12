@@ -29,7 +29,7 @@ int main(void){
         auto cur = Q.front(); Q.pop();
         for (int i = 0; i < 3; ++i) {
             int nx = cur *dy[i] + dx[i] ;
-            if(nx <0 || nx > 100000) continue;
+            if(nx <0 || nx >= 100000) continue;
             if(vis[nx] >0) continue;
 
             Q.push(nx);
