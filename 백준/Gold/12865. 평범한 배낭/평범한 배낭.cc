@@ -1,47 +1,42 @@
-#include <iostream>
-#include <vector>
+//
+// Created by dasoya on 6/25/24.
+//
+
+
+#include "bits/stdc++.h"
 
 using namespace std;
-
-struct info{
-    int w;
-    int v;
-};
-
-int knapsack2(int n, int k, vector<info> &product){
-
-    vector<vector<int>> dp(n+1, vector<int>(k+1,0));
-
-    for (int i = 1; i < n+1; ++i) {//i 현재 넣으려는 물품
-        for (int j = 0; j < product[i].w; ++j) {//j 최대 배낭의 무게
-            dp[i][j] = dp[i-1][j];
-        }
-        for (int j = product[i].w; j <=k ; ++j) {
-            dp[i][j] = max(dp[i-1][j-product[i].w]+product[i].v,dp[i-1][j]);
-
-        }
-    }
-
-    return dp[n][k];
-
-}
 
 int main(){
 
     int n,k;
 
-
-    cin >> n >>k;
-    vector<info> product(n+1,{0,0});
+    pair<int,int> arr[105];
 
 
+    cin >> n >> k;
 
-    for (int i = 1; i < n+1; ++i) {
-        cin >> product[i].w >> product[i].v ;
+    vector<vector<int>> dp(n+1,vector<int>(k+1,0));
+
+    for (int i = 1; i <= n; ++i) {
+       cin >> arr[i].first >> arr[i].second; // w, v
     }
 
-    cout << knapsack2(n,k,product);
+  //  sort(arr,arr+n);
 
-    return 0;
 
+    for (int i = 1; i <= n; ++i) {
+
+        for (int j = 0; j < arr[i].first; ++j) {//j 최대 배낭의 무게
+            dp[i][j] = dp[i-1][j];
+        }
+
+        for (int j = arr[i].first; j <= k; ++j) {
+            dp[i][j] = max(dp[i-1][j],dp[i-1][j-arr[i].first]+arr[i].second);
+               // cout << dp[i][j] <<"\n";
+        }
+    }
+
+  //  for (int j = 0; j <= k; ++j)
+    cout << dp[n][k]; // << " ";
 }
