@@ -27,11 +27,11 @@ int main(){
 
     for (int i = 1; i <= n; ++i) {
 
-        for (int j = 0; j < arr[i].first; ++j) {//j 최대 배낭의 무게
+        
+        for (int j = 0; j <= k; ++j) {
             dp[i][j] = dp[i-1][j];
-        }
 
-        for (int j = arr[i].first; j <= k; ++j) {
+            if(j>=arr[i].first)
             dp[i][j] = max(dp[i-1][j],dp[i-1][j-arr[i].first]+arr[i].second);
                // cout << dp[i][j] <<"\n";
         }
