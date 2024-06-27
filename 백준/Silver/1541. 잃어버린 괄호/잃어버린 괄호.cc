@@ -18,34 +18,20 @@ int main(){
 
     int res = 0;
     int minRes = 0;
-    bool flag = false; // false면 + true -를 의미
+    int sign = 1; // false면 + true -를 의미
 
     for (int i = 0; i < input.length(); ++i) {
 
-        if(input[i] == '+')
+        if(input[i] == '+'||input[i] == '-')
         {
-
-            if(flag){
-                minRes += stoi(operand);
-            }
-            else{
-                res  += stoi(operand);
-            }
+            
+            res  += stoi(operand) * sign;
+            
+            if(input[i] == '-' ) sign = -1;
 
             operand= "";
 
-        }
-        else if (input[i] == '-'){
 
-            if(flag){
-                minRes += stoi(operand);
-            }
-            else{
-                res  += stoi(operand);
-            }
-
-            flag = true;
-            operand= "";
         }
         else
         {
@@ -54,18 +40,9 @@ int main(){
 
     }
 
-    if(flag){
-        minRes += stoi(operand);
-    }
-    else{
-        res  += stoi(operand);
-    }
-
-
-    cout << res - minRes;
-
-
-
+    res  += stoi(operand) * sign;
+    cout << res ;
+    
 
 }
 
