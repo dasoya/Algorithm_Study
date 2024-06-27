@@ -109,7 +109,9 @@ add_executable(Algorithm_Study
        # "untitled/0X15 그리디/2217.cpp"
         #"untitled/0X15 그리디/1026.cpp"
         #"untitled/0X14 DP/12865.cpp"
-        "untitled/0X15 그리디/2457.cpp"
+        #"untitled/0X15 그리디/2457.cpp"
+        #"untitled/0X15 그리디/1541.cpp"
+        "untitled/0X15 그리디/11501.cpp"
         #"untitled/이퍼 /2840.cpp"
         #"untitled/이퍼 /31090정답.cpp"
 )
