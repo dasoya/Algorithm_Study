@@ -49,11 +49,11 @@ cmake_ninja_workdir = /Users/dasoya/Documents/GitHub/Algorithm_Study/cmake-build
 
 build cmake_object_order_depends_target_Algorithm_Study: phony || CMakeFiles/Algorithm_Study.dir
 
-build CMakeFiles/Algorithm_Study.dir/untitled/0X15_그리디/11501.cpp.o: CXX_COMPILER__Algorithm_Study_unscanned_Debug /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/0X15$ 그리디/11501.cpp || cmake_object_order_depends_target_Algorithm_Study
-  DEP_FILE = CMakeFiles/Algorithm_Study.dir/untitled/0X15_그리디/11501.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.1 -fcolor-diagnostics
+build CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o: CXX_COMPILER__Algorithm_Study_unscanned_Debug /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/0X16$ 수학/2004.cpp || cmake_object_order_depends_target_Algorithm_Study
+  DEP_FILE = CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Algorithm_Study.dir
-  OBJECT_FILE_DIR = CMakeFiles/Algorithm_Study.dir/untitled/0X15_그리디
+  OBJECT_FILE_DIR = CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학
 
 
 # =============================================================================
@@ -63,8 +63,8 @@ build CMakeFiles/Algorithm_Study.dir/untitled/0X15_그리디/11501.cpp.o: CXX_CO
 #############################################
 # Link the executable Algorithm_Study
 
-build Algorithm_Study: CXX_EXECUTABLE_LINKER__Algorithm_Study_Debug CMakeFiles/Algorithm_Study.dir/untitled/0X15_그리디/11501.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.1
+build Algorithm_Study: CXX_EXECUTABLE_LINKER__Algorithm_Study_Debug CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1
   OBJECT_DIR = CMakeFiles/Algorithm_Study.dir
   POST_BUILD = :
   PRE_LINK = :
