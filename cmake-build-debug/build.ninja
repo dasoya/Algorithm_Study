@@ -49,11 +49,11 @@ cmake_ninja_workdir = /Users/dasoya/Documents/GitHub/Algorithm_Study/cmake-build
 
 build cmake_object_order_depends_target_Algorithm_Study: phony || CMakeFiles/Algorithm_Study.dir
 
-build CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o: CXX_COMPILER__Algorithm_Study_unscanned_Debug /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/0X16$ 수학/2004.cpp || cmake_object_order_depends_target_Algorithm_Study
-  DEP_FILE = CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o.d
+build CMakeFiles/Algorithm_Study.dir/untitled/0X18_투포인터/2003.cpp.o: CXX_COMPILER__Algorithm_Study_unscanned_Debug /Users/dasoya/Documents/GitHub/Algorithm_Study/untitled/0X18$ 투포인터/2003.cpp || cmake_object_order_depends_target_Algorithm_Study
+  DEP_FILE = CMakeFiles/Algorithm_Study.dir/untitled/0X18_투포인터/2003.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Algorithm_Study.dir
-  OBJECT_FILE_DIR = CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학
+  OBJECT_FILE_DIR = CMakeFiles/Algorithm_Study.dir/untitled/0X18_투포인터
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o: CXX_COMPIL
 #############################################
 # Link the executable Algorithm_Study
 
-build Algorithm_Study: CXX_EXECUTABLE_LINKER__Algorithm_Study_Debug CMakeFiles/Algorithm_Study.dir/untitled/0X16_수학/2004.cpp.o
+build Algorithm_Study: CXX_EXECUTABLE_LINKER__Algorithm_Study_Debug CMakeFiles/Algorithm_Study.dir/untitled/0X18_투포인터/2003.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1
   OBJECT_DIR = CMakeFiles/Algorithm_Study.dir
   POST_BUILD = :
