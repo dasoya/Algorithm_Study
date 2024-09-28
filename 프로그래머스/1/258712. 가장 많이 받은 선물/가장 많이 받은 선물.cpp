@@ -1,69 +1,56 @@
 #include <string>
 #include <vector>
-#include <map>
+#include <sstream>
 #include <bits/stdc++.h>
-
 using namespace std;
-map<string,int> giftN; //선물지수
-int mat[52][52];
-int nextMonth[52];
-map<string,int> friendIndex;
+
 int solution(vector<string> friends, vector<string> gifts) {
     int answer = 0;
     
-    int k =0;
-    for(auto f:friends){
-        friendIndex[f] = k;
-        k++;
+    int n = friends.size();
     
+    map<string, int> dict; // friends의 번호 
+    
+    vector<vector<int>> table(n,vector<int>(n,0)); //gitf 주고받은 이력
+    vector<int> score(n,0);
+    
+    vector<int> total(n,0); // 받은 선물 
+    
+    
+    for(int i=0; i < n ; i++){
+        dict[friends[i]] = i; 
     }
-    for(auto s:gifts){
-        string giver, receiver;
+    
+    for(auto s : gifts){
+        stringstream ss(s);
         
-        bool flag = false;
-        for(auto c:s){
+        string a,b;
+        ss >> a >> b;
+        
+        table[dict[a]][dict[b]]++;
+        score[dict[a]]++;
+        score[dict[b]]--;
+    }
+    
+    for(int i =0;i < n; i ++){
+        for(int j =0; j < n ; j++){
             
-            if(c == ' ') {
-                flag = true;
-                continue;
+            if(i==j) continue;
+            
+            if(table[i][j] > table[j][i])
+            {
+                total[i]++;
             }
-            if(!flag)  giver += c;
-            else  receiver += c;
-            
-        }
-        
-       int gi = friendIndex[giver];
-       int ri = friendIndex[receiver];
-        
-        if(gi!=-1&&ri != -1)
-            mat[gi][ri] +=1;
-        else cout << "index error";
-        
-        giftN[giver]++;
-        giftN[receiver]--;
-    }
-    
-    for(int i =0 ;i< friends.size() ;i++){
-        for(int j = i+1; j < friends.size() ; j++){
-        
-            if(mat[i][j] > mat[j][i]){
-                 nextMonth[i]++;
-            }else if (mat[i][j] <mat[j][i]){
-                 nextMonth[j]++;
-            }else{
-                
-                if(giftN[friends[i]] > giftN[friends[j]]){
-                    nextMonth[i]++;
-                }else if (giftN[friends[i]] < giftN[friends[j]]){
-                    nextMonth[j]++;
+            else if(table[i][j] == table[j][i]){
+                if(score[i] > score[j]){
+                    total[i]++;
                 }
-                
+              
             }
-            
-          
-        } 
+        }
     }
     
-    answer = *max_element(nextMonth,nextMonth+friends.size());
+    answer = *max_element(total.begin(),total.end());
+    
     return answer;
 }
