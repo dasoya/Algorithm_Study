@@ -1,48 +1,44 @@
 #include <string>
 #include <vector>
-#include <iostream>
 
 using namespace std;
 
-vector<bool> col(13,false);
-vector<bool> dig1(2*12,false); //우상향 col + row 
-vector<bool> dig2(2*12,false); //우하향 
+vector<int> col(14,0);
+vector<int> dig1(25,0);//우상향
+vector<int> dig2(25,0);//우 하향
 
-int answer = 0;
 
-void backtracking(int row,int n){
+int back(int row,int n){
     
-    if(row == n) {
-        answer++;
-        return;
+    if(row==n){
+        return 1;
     }
     
-   for(int i = 0;i < n; i++){
+    int ans = 0; 
+    for(int i = 0; i < n; i++){
         
-        if(col[i] || dig1[i+row] || dig2[i-row+n-1]) continue;
+        if(col[i] || dig1[i+row] || dig2[i-row+n]) continue;
         
         col[i] = 1;
         dig1[i+row] = 1;
-        dig2[i-row+n-1] = 1;
+        dig2[i-row+n] = 1;
         
-        backtracking(row+1,n);
+        ans += back(row+1,n);
         
         col[i] = 0;
         dig1[i+row] = 0;
-        dig2[i-row+n-1] = 0;
+        dig2[i-row+n] = 0;
+        
         
     }
     
-    return;
+    return ans;
+    
 }
 
-
 int solution(int n) {
-  
-
-    int row = 0;
+    int answer = 0;
     
-    backtracking(0,n);
-    
+    answer = back(0,n);
     return answer;
 }
