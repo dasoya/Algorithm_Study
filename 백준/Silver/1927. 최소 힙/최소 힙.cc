@@ -1,38 +1,68 @@
+//
+// Created by dasoya on 10/1/24.
+//
+
 #include <bits/stdc++.h>
 using namespace std;
 
 int heap[100005];
 int sz = 0; // heap에 들어있는 원소의 수
 
+
+
 void push(int x){
-    heap[++sz] = x;
-    int idx = sz;
-    while(idx != 1){
-        int par = idx/2;
-        if(heap[par] <= heap[idx]) break;
-        swap(heap[par], heap[idx]);
-        idx = par;
+
+    sz++;
+    heap[sz] = x;
+    int cur = sz;
+    while(cur != 1) {
+        int p = cur/2;
+        if(heap[p] > heap[cur]) { //
+            swap(heap[p],heap[cur]);
+            cur = p;
+        }
+        else{ break;}
     }
+
+  //cout << heap[1] << " ";
+
 }
 
 int top(){
+
     return heap[1];
 }
 
 void pop(){
-    heap[1] = heap[sz--];
-    int idx = 1;
-    // 왼쪽 자식의 인덱스(=2*idx)가 size보다 크면 idx는 리프
-    while(2*idx <= sz){
-        int lc = 2*idx, rc = 2*idx+1; // 왼쪽 자식, 오른쪽 자식
-        int min_child = lc; // 두 자식 중 작은 인덱스를 담을 예정
-        if(rc <= sz && heap[rc] < heap[lc])
-            min_child = rc;
-        if(heap[idx] <= heap[min_child]) break;
-        swap(heap[idx],heap[min_child]);
-        idx = min_child;
+
+    if(sz==0) return;
+
+    heap[1] = heap[sz];
+    heap[sz] = 0;
+    sz--;
+
+    int cur  = 1;
+
+    while(true) {
+
+        if(cur*2>sz) break;
+
+        int ch1 = cur*2;
+        int ch2 = cur*2+1;
+        int min_child = ch1;
+
+        if(ch2 <= sz && heap[ch2] < heap[ch1] )
+            min_child = ch2;
+        if(heap[min_child] >= heap[cur]) break;
+        
+        swap(heap[min_child],heap[cur]);
+        cur = min_child;
     }
 }
+
+
+
+
 void test(){
     push(10); push(2); push(5); push(9); // {10, 2, 5, 9}
     cout << top() << '\n'; // 2
