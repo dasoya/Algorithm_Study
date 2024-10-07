@@ -12,6 +12,32 @@ int heavier[101];
 int cost[101];
 vector<int> adj[101];
 vector<int> adj_l[101];
+int N;
+
+bool bfs(int i,vector<int> adj[]){
+
+    int cnt = 0;
+    fill(cost,cost+100+1,-1);
+
+    queue<int> q;
+    q.push(i);
+    cost[i] = 0;
+
+    while(!q.empty()){
+        int cur = q.front(); q.pop();
+
+        for(int nxt: adj[cur]){
+            if(cost[nxt] != -1) continue;
+
+            q.push(nxt);
+            cost[nxt] = cost[cur]+1;
+            cnt++;
+
+        }
+    }
+
+    return cnt > N/2;
+}
 
 int main(){
 
@@ -25,66 +51,21 @@ int main(){
 
     int h,l;
 
+    N =n ;
+
     while(m--){
         cin >> h >> l;
         adj[l].push_back(h);
         adj_l[h].push_back(l);
+        //중복해서 들어올 수 있음.
     }
 
-    for(int i = 1; i <= n;i++){
-
-        fill(cost,cost+n+1,-1);
-
-        queue<int> q;
-        q.push(i);
-        cost[i] = 0;
-
-        while(!q.empty()){
-            int cur = q.front(); q.pop();
-
-            for(int nxt: adj[cur]){
-                if(cost[nxt] != -1) continue;
-
-                q.push(nxt);
-                cost[nxt] = cost[cur]+1;
-
-                if( cost[nxt] > 0) {
-                    lighter[nxt]++;
-                }
-            }
-        }
-    }
 
     for(int i = 1; i<=n;i++){
 
-        fill(cost,cost+n+1,-1);
-
-        queue<int> q;
-        q.push(i);
-        cost[i] = 0;
-
-        while(!q.empty()){
-            int cur = q.front(); q.pop();
-
-            for(int nxt: adj_l[cur]){
-                if(cost[nxt]!=-1) continue;
-
-                q.push(nxt);
-                cost[nxt] = cost[cur]+1;
-
-                if(cost[nxt]>0) {
-                    heavier[nxt]++;
-                }
-            }
-        }
-    }
-
-    for(int i = 1; i<=n;i++){
-
-        if(lighter[i] >n/2)
+        if(bfs(i,adj) || bfs(i,adj_l))
             ans++;
-        else if (heavier[i]>n/2)
-            ans++;
+
     }
 
     cout << ans;
