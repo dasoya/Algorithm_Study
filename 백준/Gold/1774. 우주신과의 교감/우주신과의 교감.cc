@@ -64,7 +64,7 @@ int main(){
             e++;
         }
 
-    
+
     sort(edge.begin(),edge.end());
 
     long long cost;
