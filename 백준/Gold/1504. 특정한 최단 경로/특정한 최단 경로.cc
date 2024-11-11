@@ -54,10 +54,8 @@ int main(){
     //v1,v2사이에 순서는 상관없음.
     //두개의 경로르 보면 됨. 1- v1 - v2 - n / 1 - v2 - v1 - n
     long long ans = INF;
-
     long long fixed = solve(v1,v2);
-    long long fixed2 = solve(v2,v1);
-    ans = min(solve(1,v1)+ fixed + solve(v2,n),solve(1,v2)+ fixed2 + solve(v1,n));
+    ans = min(solve(1,v1)+ fixed + solve(v2,n),solve(1,v2)+ fixed + solve(v1,n));
 
     if(ans>=INF) ans = -1;
     cout << ans;
