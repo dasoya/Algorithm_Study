@@ -9,7 +9,14 @@ int maxUser=0, maxAmount=0;
 vector<vector<int>> emoticonsFee;
 
 int getDiscountFee(int fee,int percent){
-    return (int)(fee-fee*percent/100);
+    
+    cout <<  (int)((1-0.01*percent)*fee);
+   // return ((1- percent*0.01)*fee);// (fee-fee*percent/100); //85점
+   // return (int)((1- percent*0.01)*fee); // 85점
+   // return (int)(1- percent*0.01)*fee; //0점
+   // return (1-percent/100)*fee;//0점
+    return fee - percent*fee*0.01;
+    
 }
 
 void solve(vector<vector<int>> users,int cnt, vector<int> q){
