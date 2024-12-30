@@ -22,6 +22,7 @@ vector<int> solution(string today, vector<string> terms, vector<string> privacie
     }
     
     int i = 1;
+    int todayDate =  year*12*28 +(month-1)*28 + date;
     for(string p : privacies){
         int year1 = stoi(p.substr(0,4));
         int month1 = stoi(p.substr(5,2));
@@ -37,22 +38,8 @@ vector<int> solution(string today, vector<string> terms, vector<string> privacie
         bool flag = false;
         cout << i << " " << d_year <<" " << d_month<<" "<<(char)p[p.length()-1]<<"\n";
         
-        if(d_year < year){
-            flag = true;
-            
-        }else if ( d_year == year  ){
-            
-            if( d_month < month) {
-                flag = true;
-            }
-            else if (d_month == month){
-             
-                if(d_date <= date)
-                    flag = true;
-            }
-        }
-            
-        if(flag)
+        int tDate = (d_year)*12*28 +(d_month-1)*28 + d_date;
+        if(tDate <=  todayDate)
             answer.push_back(i);
         
         i++;
